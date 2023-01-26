@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "lit-app-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/litApp/LitAppWebPart.js",
+          "manifest": "./src/webparts/litApp/LitAppWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "LitAppWebPartStrings": "lib/webparts/litApp/loc/{locale}.js"
+  }
+}
