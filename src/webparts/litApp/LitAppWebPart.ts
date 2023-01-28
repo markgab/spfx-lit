@@ -4,6 +4,10 @@ import { IReadonlyTheme } from '@microsoft/sp-component-base';
 import * as strings from 'LitAppWebPartStrings';
 import { render as litRender, html, RootPart } from 'lit';
 import './components/LitApp';
+import { 
+  IPropertyPaneConfiguration, 
+  PropertyPaneTextField 
+} from '@microsoft/sp-property-pane';
 
 export interface ILitAppWebPartProps {
   description: string;
@@ -77,5 +81,27 @@ export default class LitAppWebPart extends BaseClientSideWebPart<ILitAppWebPartP
 
   protected get dataVersion(): Version {
     return Version.parse('1.0');
+  }
+
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
+    return {
+      pages: [
+        {
+          header: {
+            description: strings.PropertyPaneDescription
+          },
+          groups: [
+            {
+              groupName: strings.BasicGroupName,
+              groupFields: [
+                PropertyPaneTextField('description', {
+                  label: strings.DescriptionFieldLabel
+                })
+              ]
+            }
+          ]
+        }
+      ]
+    };
   }
 }
