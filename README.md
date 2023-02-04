@@ -61,7 +61,7 @@ SCSS modules work as they would in any web part, SPFx loads the styles at the to
 
 So SCSS modules are not functioning well. However this is not a huge loss, fortunately with the shadow DOM, SCSS module class name hashing is rendered obsolete since all web component styles are encapsulated away from the rest of the DOM. 
 
-It is worth noting that a SCSS file can still be useful to translate Fabric UI theme variables into CSS variables that could still affect the styles into the shadow DOM like this.
+It is worth noting that a SCSS file can still be useful to translate Fabric UI theme variables into CSS variables that could still affect the styles in the shadow DOM like this.
 ```scss
 @import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
 
